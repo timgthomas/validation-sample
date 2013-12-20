@@ -1,18 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
 namespace ValidationSample
 {
-    public class MvcApplication : System.Web.HttpApplication
+    using Extensions;
+    using FluentValidation.Mvc;
+
+    public class MvcApplication : HttpApplication
     {
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
+
+            GlobalFilters.Filters.Add(new ValidatorActionFilter());
+
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+            FluentValidationModelValidatorProvider.Configure();
         }
     }
 }

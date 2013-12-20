@@ -2,7 +2,9 @@
 {
     using System;
     using System.ComponentModel.DataAnnotations;
+    using FluentValidation.Attributes;
 
+    [Validator(typeof(ContactModelValidator))]
     public class ContactModel
     {
         public string Name { get; set; }
