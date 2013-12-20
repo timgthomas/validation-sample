@@ -1,0 +1,33 @@
+﻿@model ValidationSample.Models.ContactModel
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Contact</title>
+</head>
+<body>
+    <h1>Contacts</h1>
+    <form>
+        <fieldset>
+            <legend>Contact Details</legend>
+            <p>
+                @Html.LabelFor(x => x.Name)
+                @Html.TextBoxFor(x => x.Name)
+            </p>
+            <p>
+                @Html.LabelFor(x => x.Email)
+                @Html.TextBoxFor(x => x.Email)
+            </p>
+            <p>
+                @Html.LabelFor(x => x.DateOfBirth)
+                @Html.TextBoxFor(x => x.DateOfBirth)
+            </p>
+            <p>
+                @Html.LabelFor(x => x.PhoneNumber)
+                @Html.TextBoxFor(x => x.PhoneNumber)
+            </p>
+        </fieldset>
+        <button type="submit">Add Contact</button>
+    </form>
+</body>
+</html>
