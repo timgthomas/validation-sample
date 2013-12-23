@@ -162,11 +162,16 @@ body.invalid p.message.invalid {
 
 /* Response Text */
 
+pre {
+  width: 480px;
+}
+
 code {
   font-family: 'Source Code Pro';
   font-size: 12px;
   
   display: block;
+  margin: 5px 0;
   overflow: hidden;
   white-space: pre-wrap;
 }
