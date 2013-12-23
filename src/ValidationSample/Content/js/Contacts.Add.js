@@ -19,7 +19,7 @@
         if (xhr.status === 400) {
             response = JSON.parse(xhr.responseText);
             var fields = Object.keys(response);
-            $response.text(xhr.responseText);
+            $response.text(vkbeautify.json(xhr.responseText, 2));
 
             fields.forEach(function(field) {
                 if (response[field].Errors && response[field].Errors.length > 0) {

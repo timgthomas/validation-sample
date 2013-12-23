@@ -88,6 +88,7 @@
   <ItemGroup>
     <Content Include="Content\css\style.css" />
     <Content Include="Content\js\Contacts.Add.js" />
+    <Content Include="Content\js\vkbeautify.0.99.00.beta.js" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
