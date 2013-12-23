@@ -3,6 +3,7 @@
     var request,
         $page = $('body'),
         $form = $(this),
+        $response = $('.response'),
         data = $form.serialize();
 
     var request = $.ajax({
@@ -18,6 +19,7 @@
         if (xhr.status === 400) {
             response = JSON.parse(xhr.responseText);
             var fields = Object.keys(response);
+            $response.text(xhr.responseText);
 
             fields.forEach(function(field) {
                 if (response[field].Errors && response[field].Errors.length > 0) {
@@ -34,6 +36,7 @@
     request.success(function() {
         $form.find('p.invalid').removeClass('invalid');
         $page.removeClass('invalid').addClass('successful');
+        $response.text('(No response body)')
     });
 
     return false;
