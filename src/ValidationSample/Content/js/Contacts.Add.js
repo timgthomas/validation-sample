@@ -1,7 +1,9 @@
 ﻿$('form').on('submit', function() {
 
     var request,
-        data = $(this).serialize();
+        $page = $('body'),
+        $form = $(this),
+        data = $form.serialize();
 
     var request = $.ajax({
         type: 'post',
@@ -9,9 +11,9 @@
     });
 
     request.fail(function(xhr) {
-        var response,
-            properties, property,
-            i;
+        var response, i;
+
+        $form.find('p.invalid').removeClass('invalid');
 
         if (xhr.status === 400) {
             response = JSON.parse(xhr.responseText);
@@ -25,10 +27,13 @@
                 }
             });
         }
+
+        $page.removeClass('successful').addClass('invalid');
     });
 
     request.success(function() {
-
+        $form.find('p.invalid').removeClass('invalid');
+        $page.removeClass('invalid').addClass('successful');
     });
 
     return false;

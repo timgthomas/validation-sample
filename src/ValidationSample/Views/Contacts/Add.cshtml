@@ -4,27 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Add Contact</title>
+    <link rel="stylesheet" href="~/Content/css/style.css">
 </head>
 <body>
     <h1>Contacts</h1>
+    <p class="invalid message">Uh-oh; something's wrong.</p>
+    <p class="success message">Everything's good!</p>
     <form method="post">
         <fieldset>
             <legend>Contact Details</legend>
             <p>
                 @Html.LabelFor(x => x.Name)
-                @Html.TextBoxFor(x => x.Name)
+                @Html.TextBoxFor(x => x.Name, new { placeholder = "Tiffany M. Sample" })
             </p>
             <p>
                 @Html.LabelFor(x => x.Email)
-                @Html.TextBoxFor(x => x.Email)
+                @Html.TextBoxFor(x => x.Email, new { placeholder = "tiffany@sampleco.com" })
             </p>
             <p>
                 @Html.LabelFor(x => x.DateOfBirth)
-                @Html.TextBoxFor(x => x.DateOfBirth)
+                @Html.TextBoxFor(x => x.DateOfBirth, new { placeholder = "MM/DD/YYYY" })
             </p>
             <p>
                 @Html.LabelFor(x => x.PhoneNumber)
-                @Html.TextBoxFor(x => x.PhoneNumber)
+                @Html.TextBoxFor(x => x.PhoneNumber, new { placeholder = "999-555-1212" })
             </p>
         </fieldset>
         <button type="submit">Add Contact</button>
